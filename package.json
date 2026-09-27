@@ -1,0 +1,28 @@
+{
+  "name": "song-prompt-studio",
+  "productName": "Song Prompt Studio",
+  "version": "1.1.0",
+  "description": "Build professional prompts for Suno (Simple, Advanced, Sounds) and YuE2. Beginner friendly, with micro-genre targeting and a genre explorer you can listen to.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win",
+    "dist:mac": "electron-builder --mac",
+    "dist:linux": "electron-builder --linux"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.songpromptstudio.app",
+    "productName": "Song Prompt Studio",
+    "files": ["main.js", "preload.js", "src/**/*"],
+    "win": { "target": "nsis" },
+    "mac": { "target": "dmg", "category": "public.app-category.music" },
+    "linux": { "target": "AppImage", "category": "Audio" }
+  }
+}
